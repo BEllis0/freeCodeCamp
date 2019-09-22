@@ -56,13 +56,28 @@ function findElement(arr, func) {
 
 ```javascript
 function findElement(arr, func) {
-  return arr.find(func);
+
+if (arr.filter(func).slice(0,1) <= 0) {
+  return undefined;
+}
+
+else {
+  return arr.filter(func).slice(0,1);
+}
+
 }
 ```
 
 #### Relevant Links
 
-*   [Array.prototype.find](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find)
+*   [Array.prototype.filter](https://guide.freecodecamp.org/javascript/standard-objects/array/array-prototype-filter/)
+*   [Array.prototype.slice](https://guide.freecodecamp.org/javascript/standard-objects/array/array-prototype-slice/)
+
+#### Code Explanation
+
+* Using the `filter` method, you can produce a new array which includes the numbers that pass the `func` test
+* Adding `slice` to this, you can return the first number in the array
+* The if statement tests if any numbers in the array pass the test by checking if a number greater than 0 was returned
 
 </details>
 
